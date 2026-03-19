@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>M. Abeeque | Executive Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#030303',
+                        surface: '#0a0a0a',
+                        neon: '#3dfac1',
+                        accent: '#8b5cf6'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #030303; 
+            color: #94a3b8; 
+            overflow-x: hidden;
+        }
+        .heading-font { font-family: 'Outfit', sans-serif; }
+        
+        /* Floating Background Effect */
+        .glow-sphere {
+            position: absolute; width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(61, 250, 193, 0.05) 0%, transparent 70%);
+            border-radius: 50%; z-index: -1; filter: blur(60px);
+            animation: float 20s infinite alternate;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(10%, 10%); }
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(61, 250, 193, 0.2);
+            transform: translateY(-8px);
+        }
+
+        /* Neon Text Gradient */
+        .gradient-text {
+            background: linear-gradient(135deg, #3dfac1 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Mobile Nav Blur */
+        .mobile-bottom-nav {
+            background: rgba(3, 3, 3, 0.7);
+            backdrop-filter: blur(25px);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="pb-20 md:pb-0">
+
+    <div class="glow-sphere top-[-100px] left-[-100px]"></div>
+    <div class="glow-sphere bottom-[-100px] right-[-100px]" style="animation-delay: -5s;"></div>
+
+    <nav class="hidden md:flex fixed top-0 w-full z-[100] py-6 px-10">
+        <div class="max-w-7xl mx-auto w-full flex justify-between items-center bg-white/5 backdrop-blur-xl border border-white/5 px-8 py-4 rounded-3xl">
+            <div class="heading-font text-white font-black text-2xl tracking-tighter uppercase">
+                Abeeque<span class="text-neon">.</span>
+            </div>
+            <div class="flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em] text-stone-400">
+                <a href="#home" class="hover:text-neon transition">Overview</a>
+                <a href="#experience" class="hover:text-neon transition">Career</a>
+                <a href="#skills" class="hover:text-neon transition">Stack</a>
+            </div>
+            <a href="mailto:abiqmohammad@gmail.com" class="text-xs font-bold bg-neon text-dark px-6 py-2.5 rounded-2xl hover:scale-105 transition active:scale-95">
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <section id="home" class="relative pt-32 md:pt-60 pb-20 px-6">
+        <div class="max-w-6xl mx-auto text-center md:text-left">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-stone-400 text-[10px] font-bold uppercase tracking-widest mb-10">
+                <span class="w-2 h-2 rounded-full bg-neon shadow-[0_0_10px_#3dfac1]"></span>
+                Open for New Projects
+            </div>
+            <h1 class="heading-font text-6xl md:text-[10rem] font-black text-white leading-[0.85] tracking-tighter mb-10">
+                M. Abeeque <br> <span class="gradient-text">Ur Rahman</span>
+            </h1>
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-10">
+                <p class="text-lg md:text-2xl text-stone-500 max-w-2xl leading-relaxed">
+                    Elevating business operations through <span class="text-white">IT expertise</span> and strategic retail management.
+                </p>
+                <div class="flex gap-4 justify-center">
+                    <div class="text-center">
+                        <p class="text-3xl font-black text-white">2Y+</p>
+                        <p class="text-[10px] font-bold uppercase text-stone-600">Experience</p>
+                    </div>
+                    <div class="w-px h-10 bg-white/10"></div>
+                    <div class="text-center">
+                        <p class="text-3xl font-black text-white">100%</p>
+                        <p class="text-[10px] font-bold uppercase text-stone-600">Dedication</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="md:col-span-2 glass-card p-10 rounded-[3rem]">
+                    <div class="flex justify-between items-start mb-16">
+                        <h2 class="text-2xl font-bold text-white uppercase italic">Management</h2>
+                        <span class="text-[10px] font-bold text-stone-500 tracking-widest">2023 - 2024</span>
+                    </div>
+                    <h3 class="text-4xl font-black text-white mb-2">Outlet Manager</h3>
+                    <p class="text-neon font-bold text-sm mb-6 uppercase tracking-widest">Kamran Computer Care</p>
+                    <p class="text-stone-400 leading-relaxed max-w-lg text-lg">
+                        Spearheaded daily operations and staff management. Successfully increased store revenue through optimized inventory and customer-first strategies.
+                    </p>
+                </div>
+
+                <div class="glass-card p-10 rounded-[3rem] flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] font-bold text-stone-500 tracking-widest uppercase">2022 - 2023</span>
+                        <h3 class="text-2xl font-bold text-white mt-4">Sales Officer</h3>
+                        <p class="text-stone-500 text-sm mt-2">Specialized in Tech Accessories & Client Advising.</p>
+                    </div>
+                    <div class="mt-10">
+                        <i class="fa-solid fa-arrow-trend-up text-4xl text-neon/20"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="heading-font text-xs font-bold text-stone-600 uppercase tracking-[0.4em] mb-12 text-center">Technical Arsenal</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass-card p-8 text-center rounded-3xl group">
+                    <i class="fa-brands fa-microsoft text-3xl mb-4 group-hover:scale-110 transition"></i>
+                    <p class="text-[10px] font-bold uppercase tracking-widest">MS Office</p>
+                </div>
+                <div class="glass-card p-8 text-center rounded-3xl group">
+                    <i class="fa-solid fa-wand-magic-sparkles text-3xl mb-4 group-hover:scale-110 transition"></i>
+                    <p class="text-[10px] font-bold uppercase tracking-widest">Photoshop</p>
+                </div>
+                <div class="glass-card p-8 text-center rounded-3xl group">
+                    <i class="fa-solid fa-bezier-curve text-3xl mb-4 group-hover:scale-110 transition"></i>
+                    <p class="text-[10px] font-bold uppercase tracking-widest">Illustrator</p>
+                </div>
+                <div class="glass-card p-8 text-center rounded-3xl group border-neon/30">
+                    <i class="fa-solid fa-award text-3xl text-neon mb-4 group-hover:scale-110 transition"></i>
+                    <p class="text-[10px] font-bold uppercase tracking-widest">ACIT Certified</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-6xl mx-auto glass-card rounded-[4rem] p-12 md:p-24 text-center overflow-hidden relative">
+            <div class="absolute inset-0 bg-gradient-to-br from-neon/10 to-transparent opacity-50"></div>
+            <div class="relative z-10">
+                <h2 class="heading-font text-4xl md:text-6xl font-black text-white mb-8">Ready to start a <br> <span class="gradient-text">New Venture?</span></h2>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="mailto:abiqmohammad@gmail.com" class="text-sm font-bold bg-white text-dark px-10 py-4 rounded-full hover:bg-neon transition">Email Me</a>
+                    <a href="tel:03030040978" class="text-sm font-bold border border-white/20 text-white px-10 py-4 rounded-full hover:bg-white/5 transition">0303 0040978</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="md:hidden fixed bottom-6 left-6 right-6 h-16 mobile-bottom-nav rounded-[2rem] z-[1000] flex justify-around items-center px-4 shadow-2xl">
+        <a href="#home" class="flex flex-col items-center text-white">
+            <i class="fa-solid fa-compass text-lg"></i>
+            <span class="text-[8px] font-bold uppercase mt-1">Home</span>
+        </a>
+        <a href="#experience" class="flex flex-col items-center text-stone-500">
+            <i class="fa-solid fa-briefcase text-lg"></i>
+            <span class="text-[8px] font-bold uppercase mt-1">Career</span>
+        </a>
+        <a href="#skills" class="flex flex-col items-center text-stone-500">
+            <i class="fa-solid fa-layer-group text-lg"></i>
+            <span class="text-[8px] font-bold uppercase mt-1">Stack</span>
+        </a>
+        <div class="w-12 h-12 bg-neon rounded-2xl flex items-center justify-center text-dark shadow-[0_0_20px_rgba(61,250,193,0.3)]">
+            <a href="mailto:abiqmohammad@gmail.com"><i class="fa-solid fa-plus text-xl"></i></a>
+        </div>
+    </div>
+
+    <footer class="py-12 text-center">
+        <p class="text-[10px] font-bold uppercase tracking-[0.5em] text-stone-700">© 2026 M.Abeeque — Karachi, PK</p>
+    </footer>
+
+</body>
+</html>
