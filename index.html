@@ -1,217 +1,1840 @@
+```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>M. Abeeque | Executive Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#030303">
+
+    <title>M. Abeeque-Ur-Rahman | IT Support Officer</title>
+
+    <meta name="description"
+        content="M. Abeeque-Ur-Rahman — IT Support Officer, IT Administrator and IT Support & Operations professional based in Karachi, Pakistan.">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         dark: '#030303',
-                        surface: '#0a0a0a',
+                        surface: '#090909',
+                        surface2: '#101010',
                         neon: '#3dfac1',
-                        accent: '#8b5cf6'
+                        accent: '#8b5cf6',
+                        muted: '#94a3b8'
                     }
                 }
             }
         }
     </script>
-    
+
     <style>
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #030303; 
-            color: #94a3b8; 
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #030303;
+            color: #94a3b8;
             overflow-x: hidden;
         }
-        .heading-font { font-family: 'Outfit', sans-serif; }
-        
-        /* Floating Background Effect */
+
+        .heading-font {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        ::selection {
+            background: #3dfac1;
+            color: #030303;
+        }
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        .grid-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -5;
+            pointer-events: none;
+            opacity: .18;
+            background-image:
+                linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+            background-size: 70px 70px;
+            mask-image: linear-gradient(to bottom, black, transparent 90%);
+        }
+
         .glow-sphere {
-            position: absolute; width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(61, 250, 193, 0.05) 0%, transparent 70%);
-            border-radius: 50%; z-index: -1; filter: blur(60px);
-            animation: float 20s infinite alternate;
+            position: fixed;
+            width: 550px;
+            height: 550px;
+            border-radius: 50%;
+            z-index: -4;
+            pointer-events: none;
+            filter: blur(80px);
+            opacity: .7;
         }
 
-        @keyframes float {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(10%, 10%); }
+        .glow-one {
+            top: -250px;
+            left: -180px;
+            background: radial-gradient(circle,
+                    rgba(61,250,193,.10) 0%,
+                    transparent 70%);
+            animation: floatOne 18s ease-in-out infinite alternate;
         }
 
-        /* Glassmorphism Card */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        .glow-two {
+            bottom: -250px;
+            right: -180px;
+            background: radial-gradient(circle,
+                    rgba(139,92,246,.09) 0%,
+                    transparent 70%);
+            animation: floatTwo 22s ease-in-out infinite alternate;
         }
 
-        .glass-card:hover {
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(61, 250, 193, 0.2);
-            transform: translateY(-8px);
+        @keyframes floatOne {
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(120px, 100px);
+            }
         }
 
-        /* Neon Text Gradient */
+        @keyframes floatTwo {
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(-100px, -80px);
+            }
+        }
+
+        /* =========================
+           GLASS
+        ========================= */
+
+        .glass {
+            background: rgba(255,255,255,.025);
+            border: 1px solid rgba(255,255,255,.07);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow:
+                0 20px 70px rgba(0,0,0,.25),
+                inset 0 1px 0 rgba(255,255,255,.025);
+        }
+
+        .glass-hover {
+            transition:
+                transform .45s cubic-bezier(.23,1,.32,1),
+                border-color .45s ease,
+                background .45s ease,
+                box-shadow .45s ease;
+        }
+
+        .glass-hover:hover {
+            transform: translateY(-7px);
+            background: rgba(255,255,255,.04);
+            border-color: rgba(61,250,193,.20);
+            box-shadow:
+                0 25px 80px rgba(0,0,0,.4),
+                0 0 40px rgba(61,250,193,.035);
+        }
+
         .gradient-text {
-            background: linear-gradient(135deg, #3dfac1 0%, #8b5cf6 100%);
+            background: linear-gradient(
+                135deg,
+                #ffffff 5%,
+                #3dfac1 45%,
+                #8b5cf6 100%
+            );
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Mobile Nav Blur */
-        .mobile-bottom-nav {
-            background: rgba(3, 3, 3, 0.7);
-            backdrop-filter: blur(25px);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        .green-gradient {
+            background: linear-gradient(
+                135deg,
+                #3dfac1,
+                #b5ffe9
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .no-scrollbar::-webkit-scrollbar { display: none; }
+        /* =========================
+           NAV
+        ========================= */
+
+        .nav {
+            background: rgba(3,3,3,.68);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255,255,255,.07);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color .3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            background: #3dfac1;
+            transition: width .3s ease;
+        }
+
+        .nav-link:hover {
+            color: #3dfac1;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero-line {
+            width: 90px;
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                #3dfac1,
+                transparent
+            );
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #3dfac1;
+            box-shadow: 0 0 14px #3dfac1;
+            animation: pulseDot 2s infinite;
+        }
+
+        @keyframes pulseDot {
+            0%,100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: .5;
+                transform: scale(.75);
+            }
+        }
+
+        .hero-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 5rem);
+            line-height: .9;
+            color: white;
+            font-weight: 900;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skill-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(61,250,193,.05);
+            filter: blur(25px);
+            transition: transform .5s ease;
+        }
+
+        .skill-card:hover::before {
+            transform: scale(1.5);
+        }
+
+        .skill-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            background: rgba(61,250,193,.07);
+            color: #3dfac1;
+            border: 1px solid rgba(61,250,193,.12);
+        }
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .timeline {
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 18px;
+            top: 10px;
+            bottom: 10px;
+            width: 1px;
+            background: linear-gradient(
+                to bottom,
+                rgba(61,250,193,.6),
+                rgba(255,255,255,.05),
+                transparent
+            );
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 11px;
+            top: 12px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #030303;
+            border: 2px solid #3dfac1;
+            box-shadow: 0 0 15px rgba(61,250,193,.4);
+            z-index: 2;
+        }
+
+        .experience-card {
+            margin-left: 55px;
+        }
+
+        /* =========================
+           TAGS
+        ========================= */
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255,255,255,.035);
+            border: 1px solid rgba(255,255,255,.07);
+            color: #a8b1bd;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .btn-primary {
+            background: #3dfac1;
+            color: #030303;
+            transition: all .3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(61,250,193,.15);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255,255,255,.12);
+            color: white;
+            background: rgba(255,255,255,.025);
+            transition: all .3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: rgba(61,250,193,.35);
+            background: rgba(61,250,193,.05);
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           MOBILE NAV
+        ========================= */
+
+        .mobile-nav {
+            background: rgba(5,5,5,.78);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255,255,255,.08);
+            box-shadow: 0 15px 50px rgba(0,0,0,.55);
+        }
+
+        .mobile-nav a {
+            transition: color .25s ease, transform .25s ease;
+        }
+
+        .mobile-nav a:hover {
+            color: #3dfac1;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           REVEAL
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            animation: reveal .8s forwards;
+        }
+
+        .delay-1 {
+            animation-delay: .1s;
+        }
+
+        .delay-2 {
+            animation-delay: .2s;
+        }
+
+        .delay-3 {
+            animation-delay: .3s;
+        }
+
+        .delay-4 {
+            animation-delay: .4s;
+        }
+
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           SCROLLBAR
+        ========================= */
+
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #030303;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1d2927;
+            border-radius: 20px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3dfac1;
+        }
+
+        @media(max-width: 768px) {
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-dot {
+                left: 3px;
+            }
+
+            .experience-card {
+                margin-left: 35px;
+            }
+        }
     </style>
 </head>
-<body class="pb-20 md:pb-0">
 
-    <div class="glow-sphere top-[-100px] left-[-100px]"></div>
-    <div class="glow-sphere bottom-[-100px] right-[-100px]" style="animation-delay: -5s;"></div>
+<body class="pb-24 md:pb-0">
 
-    <nav class="hidden md:flex fixed top-0 w-full z-[100] py-6 px-10">
-        <div class="max-w-7xl mx-auto w-full flex justify-between items-center bg-white/5 backdrop-blur-xl border border-white/5 px-8 py-4 rounded-3xl">
-            <div class="heading-font text-white font-black text-2xl tracking-tighter uppercase">
-                Abeeque<span class="text-neon">.</span>
-            </div>
-            <div class="flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em] text-stone-400">
-                <a href="#home" class="hover:text-neon transition">Overview</a>
-                <a href="#experience" class="hover:text-neon transition">Career</a>
-                <a href="#skills" class="hover:text-neon transition">Stack</a>
-            </div>
-            <a href="mailto:abiqmohammad@gmail.com" class="text-xs font-bold bg-neon text-dark px-6 py-2.5 rounded-2xl hover:scale-105 transition active:scale-95">
-                Contact
+    <!-- Background -->
+    <div class="grid-bg"></div>
+    <div class="glow-sphere glow-one"></div>
+    <div class="glow-sphere glow-two"></div>
+
+
+    <!-- =========================
+         DESKTOP NAV
+    ========================= -->
+
+    <nav class="hidden md:block fixed top-0 left-0 right-0 z-50 px-8 pt-5">
+
+        <div class="nav max-w-7xl mx-auto rounded-2xl px-7 py-4 flex items-center justify-between">
+
+            <a href="#home"
+                class="heading-font text-xl font-black text-white tracking-tight">
+                ABEEQUE<span class="text-neon">.</span>
             </a>
+
+            <div class="flex items-center gap-9 text-[10px] font-bold uppercase tracking-[.2em] text-stone-500">
+
+                <a href="#home" class="nav-link">Home</a>
+
+                <a href="#about" class="nav-link">About</a>
+
+                <a href="#skills" class="nav-link">Skills</a>
+
+                <a href="#experience" class="nav-link">Experience</a>
+
+                <a href="#education" class="nav-link">Education</a>
+
+            </div>
+
+            <a href="mailto:abiqmohammad@gmail.com"
+                class="btn-primary px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest">
+                Let's Talk
+            </a>
+
         </div>
+
     </nav>
 
-    <section id="home" class="relative pt-32 md:pt-60 pb-20 px-6">
-        <div class="max-w-6xl mx-auto text-center md:text-left">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-stone-400 text-[10px] font-bold uppercase tracking-widest mb-10">
-                <span class="w-2 h-2 rounded-full bg-neon shadow-[0_0_10px_#3dfac1]"></span>
-                Open for New Projects
-            </div>
-            <h1 class="heading-font text-6xl md:text-[10rem] font-black text-white leading-[0.85] tracking-tighter mb-10">
-                M. Abeeque <br> <span class="gradient-text">Ur Rahman</span>
-            </h1>
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-10">
-                <p class="text-lg md:text-2xl text-stone-500 max-w-2xl leading-relaxed">
-                    Elevating business operations through <span class="text-white">IT expertise</span> and strategic retail management.
-                </p>
-                <div class="flex gap-4 justify-center">
-                    <div class="text-center">
-                        <p class="text-3xl font-black text-white">2Y+</p>
-                        <p class="text-[10px] font-bold uppercase text-stone-600">Experience</p>
-                    </div>
-                    <div class="w-px h-10 bg-white/10"></div>
-                    <div class="text-center">
-                        <p class="text-3xl font-black text-white">100%</p>
-                        <p class="text-[10px] font-bold uppercase text-stone-600">Dedication</p>
-                    </div>
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section id="home"
+        class="relative min-h-screen flex items-center px-6 pt-24">
+
+        <div class="max-w-7xl mx-auto w-full">
+
+            <div class="max-w-6xl">
+
+                <!-- Status -->
+
+                <div class="reveal inline-flex items-center gap-3 px-4 py-2 rounded-full glass mb-8">
+
+                    <span class="status-dot"></span>
+
+                    <span class="text-[10px] font-bold uppercase tracking-[.18em] text-stone-400">
+                        IT Support Professional
+                    </span>
+
                 </div>
+
+
+                <!-- Heading -->
+
+                <h1 class="reveal delay-1 heading-font text-white font-black tracking-[-.055em] leading-[.85]
+                           text-[4.5rem] sm:text-[6rem] md:text-[8.5rem] lg:text-[9.5rem]">
+
+                    M. Abeeque
+
+                    <br>
+
+                    <span class="gradient-text">
+                        Ur-Rahman
+                    </span>
+
+                </h1>
+
+
+                <!-- Hero bottom -->
+
+                <div class="reveal delay-2 mt-12 grid lg:grid-cols-[1fr_auto] gap-10 items-end">
+
+                    <div class="max-w-2xl">
+
+                        <div class="flex items-center gap-4 mb-5">
+
+                            <div class="hero-line"></div>
+
+                            <span class="text-[10px] uppercase tracking-[.3em] font-bold text-neon">
+                                IT Support • Administration • Operations
+                            </span>
+
+                        </div>
+
+                        <p class="text-lg md:text-xl text-stone-500 leading-relaxed">
+
+                            Detail-oriented IT Support and Operations professional
+                            focused on keeping
+                            <span class="text-white">systems, users and technology</span>
+                            running smoothly.
+
+                        </p>
+
+                        <div class="flex flex-wrap gap-3 mt-7">
+
+                            <span class="tag">
+                                <i class="fa-solid fa-location-dot text-neon"></i>
+                                Karachi, Pakistan
+                            </span>
+
+                            <span class="tag">
+                                <i class="fa-solid fa-network-wired text-neon"></i>
+                                Networking
+                            </span>
+
+                            <span class="tag">
+                                <i class="fa-solid fa-shield-halved text-neon"></i>
+                                IT Operations
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Stats -->
+
+                    <div class="flex items-center gap-7 lg:pb-2">
+
+                        <div>
+                            <div class="hero-number">4+</div>
+                            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-stone-600 mt-2">
+                                Years Experience
+                            </div>
+                        </div>
+
+                        <div class="w-px h-16 bg-white/10"></div>
+
+                        <div>
+                            <div class="hero-number">IT</div>
+                            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-stone-600 mt-2">
+                                Support & Ops
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="reveal delay-3 flex flex-wrap gap-4 mt-10">
+
+                    <a href="#experience"
+                        class="btn-primary px-7 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest">
+
+                        Explore Experience
+
+                        <i class="fa-solid fa-arrow-down ml-2"></i>
+
+                    </a>
+
+                    <a href="mailto:abiqmohammad@gmail.com"
+                        class="btn-secondary px-7 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest">
+
+                        Contact Me
+
+                        <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-neon"></i>
+
+                    </a>
+
+                </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <section id="experience" class="py-20 px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="md:col-span-2 glass-card p-10 rounded-[3rem]">
-                    <div class="flex justify-between items-start mb-16">
-                        <h2 class="text-2xl font-bold text-white uppercase italic">Management</h2>
-                        <span class="text-[10px] font-bold text-stone-500 tracking-widest">2023 - 2024</span>
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about" class="py-28 px-6">
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-8">
+
+                <!-- Left -->
+
+                <div class="glass rounded-[2.5rem] p-8 md:p-12 glass-hover">
+
+                    <div class="text-neon text-xs uppercase tracking-[.3em] font-black mb-10">
+                        01 / About
                     </div>
-                    <h3 class="text-4xl font-black text-white mb-2">Outlet Manager</h3>
-                    <p class="text-neon font-bold text-sm mb-6 uppercase tracking-widest">Kamran Computer Care</p>
-                    <p class="text-stone-400 leading-relaxed max-w-lg text-lg">
-                        Spearheaded daily operations and staff management. Successfully increased store revenue through optimized inventory and customer-first strategies.
+
+                    <div class="w-16 h-16 rounded-2xl bg-neon/10 border border-neon/15
+                                flex items-center justify-center mb-8">
+
+                        <i class="fa-solid fa-user-gear text-2xl text-neon"></i>
+
+                    </div>
+
+                    <h2 class="heading-font text-4xl md:text-5xl font-black text-white leading-tight">
+
+                        Technology should
+                        <span class="green-gradient">
+                            work for people.
+                        </span>
+
+                    </h2>
+
+                </div>
+
+
+                <!-- Right -->
+
+                <div class="glass rounded-[2.5rem] p-8 md:p-12">
+
+                    <div class="text-[10px] uppercase tracking-[.25em] font-bold text-stone-600 mb-7">
+                        Professional Profile
+                    </div>
+
+                    <p class="text-stone-400 text-lg leading-relaxed mb-7">
+
+                        Detail-oriented IT Support and Operations Professional
+                        with <span class="text-white font-semibold">4 years of combined
+                        professional experience</span> across IT support,
+                        technical support, administration and operational environments.
+
                     </p>
+
+                    <p class="text-stone-500 leading-relaxed mb-8">
+
+                        Experienced in end-user support, hardware and software
+                        troubleshooting, networking, system administration and
+                        day-to-day IT operations. Comfortable working with
+                        Windows environments, Microsoft 365, Active Directory,
+                        DNS, DHCP, Group Policy and network troubleshooting.
+
+                    </p>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="tag">End User Support</span>
+                        <span class="tag">System Administration</span>
+                        <span class="tag">Networking</span>
+                        <span class="tag">Hardware</span>
+                        <span class="tag">IT Operations</span>
+                        <span class="tag">Troubleshooting</span>
+
+                    </div>
+
                 </div>
 
-                <div class="glass-card p-10 rounded-[3rem] flex flex-col justify-between">
-                    <div>
-                        <span class="text-[10px] font-bold text-stone-500 tracking-widest uppercase">2022 - 2023</span>
-                        <h3 class="text-2xl font-bold text-white mt-4">Sales Officer</h3>
-                        <p class="text-stone-500 text-sm mt-2">Specialized in Tech Accessories & Client Advising.</p>
-                    </div>
-                    <div class="mt-10">
-                        <i class="fa-solid fa-arrow-trend-up text-4xl text-neon/20"></i>
-                    </div>
-                </div>
             </div>
+
         </div>
+
     </section>
 
-    <section id="skills" class="py-20 px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="heading-font text-xs font-bold text-stone-600 uppercase tracking-[0.4em] mb-12 text-center">Technical Arsenal</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="glass-card p-8 text-center rounded-3xl group">
-                    <i class="fa-brands fa-microsoft text-3xl mb-4 group-hover:scale-110 transition"></i>
-                    <p class="text-[10px] font-bold uppercase tracking-widest">MS Office</p>
-                </div>
-                <div class="glass-card p-8 text-center rounded-3xl group">
-                    <i class="fa-solid fa-wand-magic-sparkles text-3xl mb-4 group-hover:scale-110 transition"></i>
-                    <p class="text-[10px] font-bold uppercase tracking-widest">Photoshop</p>
-                </div>
-                <div class="glass-card p-8 text-center rounded-3xl group">
-                    <i class="fa-solid fa-bezier-curve text-3xl mb-4 group-hover:scale-110 transition"></i>
-                    <p class="text-[10px] font-bold uppercase tracking-widest">Illustrator</p>
-                </div>
-                <div class="glass-card p-8 text-center rounded-3xl group border-neon/30">
-                    <i class="fa-solid fa-award text-3xl text-neon mb-4 group-hover:scale-110 transition"></i>
-                    <p class="text-[10px] font-bold uppercase tracking-widest">ACIT Certified</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
+    <!-- =========================
+         WHAT I DO
+    ========================= -->
 
     <section class="py-20 px-6">
-        <div class="max-w-6xl mx-auto glass-card rounded-[4rem] p-12 md:p-24 text-center overflow-hidden relative">
-            <div class="absolute inset-0 bg-gradient-to-br from-neon/10 to-transparent opacity-50"></div>
-            <div class="relative z-10">
-                <h2 class="heading-font text-4xl md:text-6xl font-black text-white mb-8">Ready to start a <br> <span class="gradient-text">New Venture?</span></h2>
-                <div class="flex flex-wrap justify-center gap-6">
-                    <a href="mailto:abiqmohammad@gmail.com" class="text-sm font-bold bg-white text-dark px-10 py-4 rounded-full hover:bg-neon transition">Email Me</a>
-                    <a href="tel:03030040978" class="text-sm font-bold border border-white/20 text-white px-10 py-4 rounded-full hover:bg-white/5 transition">0303 0040978</a>
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-12">
+
+                <div>
+
+                    <div class="text-neon text-[10px] uppercase tracking-[.3em] font-black mb-4">
+                        Core Capabilities
+                    </div>
+
+                    <h2 class="heading-font text-4xl md:text-6xl text-white font-black tracking-tight">
+                        What I Do
+                    </h2>
+
                 </div>
+
+                <p class="text-stone-600 text-sm max-w-sm">
+                    Practical technical support across users, systems,
+                    infrastructure and everyday IT operations.
+                </p>
+
             </div>
+
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                <div class="glass skill-card rounded-3xl p-7 glass-hover">
+
+                    <div class="skill-icon mb-7">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+
+                    <h3 class="text-white font-bold text-lg mb-3">
+                        User Support
+                    </h3>
+
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        End-user support, issue resolution, troubleshooting,
+                        documentation and service follow-up.
+                    </p>
+
+                </div>
+
+
+                <div class="glass skill-card rounded-3xl p-7 glass-hover">
+
+                    <div class="skill-icon mb-7">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+
+                    <h3 class="text-white font-bold text-lg mb-3">
+                        System Administration
+                    </h3>
+
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Windows environments, user/account support,
+                        Active Directory and Group Policy.
+                    </p>
+
+                </div>
+
+
+                <div class="glass skill-card rounded-3xl p-7 glass-hover">
+
+                    <div class="skill-icon mb-7">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+
+                    <h3 class="text-white font-bold text-lg mb-3">
+                        Networking
+                    </h3>
+
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        TCP/IP, LAN/WAN, Wi-Fi, DNS, DHCP and
+                        connectivity troubleshooting.
+                    </p>
+
+                </div>
+
+
+                <div class="glass skill-card rounded-3xl p-7 glass-hover">
+
+                    <div class="skill-icon mb-7">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+
+                    <h3 class="text-white font-bold text-lg mb-3">
+                        Hardware & Software
+                    </h3>
+
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        PC/laptop diagnostics, peripherals,
+                        maintenance and software troubleshooting.
+                    </p>
+
+                </div>
+
+            </div>
+
         </div>
+
     </section>
 
-    <div class="md:hidden fixed bottom-6 left-6 right-6 h-16 mobile-bottom-nav rounded-[2rem] z-[1000] flex justify-around items-center px-4 shadow-2xl">
-        <a href="#home" class="flex flex-col items-center text-white">
-            <i class="fa-solid fa-compass text-lg"></i>
-            <span class="text-[8px] font-bold uppercase mt-1">Home</span>
-        </a>
-        <a href="#experience" class="flex flex-col items-center text-stone-500">
-            <i class="fa-solid fa-briefcase text-lg"></i>
-            <span class="text-[8px] font-bold uppercase mt-1">Career</span>
-        </a>
-        <a href="#skills" class="flex flex-col items-center text-stone-500">
-            <i class="fa-solid fa-layer-group text-lg"></i>
-            <span class="text-[8px] font-bold uppercase mt-1">Stack</span>
-        </a>
-        <div class="w-12 h-12 bg-neon rounded-2xl flex items-center justify-center text-dark shadow-[0_0_20px_rgba(61,250,193,0.3)]">
-            <a href="mailto:abiqmohammad@gmail.com"><i class="fa-solid fa-plus text-xl"></i></a>
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills" class="py-28 px-6">
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="text-center mb-14">
+
+                <div class="text-neon text-[10px] uppercase tracking-[.35em] font-black mb-4">
+                    02 / Technical Arsenal
+                </div>
+
+                <h2 class="heading-font text-4xl md:text-6xl font-black text-white">
+                    Technical Skills
+                </h2>
+
+                <p class="text-stone-600 text-sm mt-5 max-w-xl mx-auto">
+                    Technologies and operational areas covered through
+                    professional experience and ongoing development.
+                </p>
+
+            </div>
+
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+
+                <!-- Windows -->
+
+                <div class="glass rounded-3xl p-7 glass-hover">
+
+                    <div class="flex items-center gap-4 mb-6">
+
+                        <div class="skill-icon">
+                            <i class="fa-brands fa-windows"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white font-bold">
+                                Operating Systems
+                            </h3>
+
+                            <p class="text-[9px] uppercase tracking-widest text-stone-600 mt-1">
+                                Windows Environment
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="tag">Windows OS</span>
+                        <span class="tag">System Configuration</span>
+                        <span class="tag">User Support</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Microsoft -->
+
+                <div class="glass rounded-3xl p-7 glass-hover">
+
+                    <div class="flex items-center gap-4 mb-6">
+
+                        <div class="skill-icon">
+                            <i class="fa-brands fa-microsoft"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white font-bold">
+                                Microsoft 365
+                            </h3>
+
+                            <p class="text-[9px] uppercase tracking-widest text-stone-600 mt-1">
+                                Productivity
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="tag">Office 365</span>
+                        <span class="tag">User Support</span>
+                        <span class="tag">Productivity</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Active Directory -->
+
+                <div class="glass rounded-3xl p-7 glass-hover">
+
+                    <div class="flex items-center gap-4 mb-6">
+
+                        <div class="skill-icon">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white font-bold">
+                                System Administration
+                            </h3>
+
+                            <p class="text-[9px] uppercase tracking-widest text-stone-600 mt-1">
+                                Identity & Services
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="tag">Active Directory</span>
+                        <span class="tag">DNS</span>
+                        <span class="tag">DHCP</span>
+                        <span class="tag">Group Policy</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Networking -->
+
+                <div class="glass rounded-3xl p-7 glass-hover">
+
+                    <div class="flex items-center gap-4 mb-6">
+
+                        <div class="skill-icon">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white font-bold">
+                                Networking
+                            </h3>
+
+                            <p class="text-[9px] uppercase tracking-widest text-stone-600 mt-1">
+                                Connectivity
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="tag">TCP/IP</span>
+                        <span class="tag">LAN/WAN</span>
+                        <span class="tag">Wi-Fi</span>
+                        <span class="tag">Troubleshooting</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Security -->
+
+                <div class="glass rounded-3xl p-7 glass-hover">
+
+                    <div class="flex items-center gap-4 mb-6">
+
+                        <div class="skill-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white font-bold">
+                                Security & Continuity
+                            </h3>
+
+                            <p class="text-[9px] uppercase tracking-widest text-stone-600 mt-1">
+                                Protection
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="tag">Antivirus</span>
+                        <span class="tag">Backup Systems</span>
+                        <span class="tag">Cybersecurity Practices</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Support -->
+
+                <div class="glass rounded-3xl p-7 glass-hover">
+
+                    <div class="flex items-center gap-4 mb-6">
+
+                        <div class="skill-icon">
+                            <i class="fa-solid fa-ticket"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white font-bold">
+                                Support Operations
+                            </h3>
+
+                            <p class="text-[9px] uppercase tracking-widest text-stone-600 mt-1">
+                                Service Desk
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="tag">Remote Support</span>
+                        <span class="tag">Ticketing</span>
+                        <span class="tag">Issue Tracking</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================= -->
+
+    <section id="experience" class="py-28 px-6">
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="mb-14">
+
+                <div class="text-neon text-[10px] uppercase tracking-[.35em] font-black mb-4">
+                    03 / Career
+                </div>
+
+                <h2 class="heading-font text-4xl md:text-6xl text-white font-black">
+                    Professional Experience
+                </h2>
+
+                <p class="text-stone-600 max-w-xl mt-5">
+                    Experience across IT support, technical operations,
+                    administration and customer-facing business environments.
+                </p>
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <!-- IOTA -->
+
+                <div class="relative mb-8">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="experience-card glass rounded-[2rem] p-7 md:p-10 glass-hover">
+
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-5 mb-8">
+
+                            <div>
+
+                                <div class="inline-flex items-center gap-2 mb-4">
+
+                                    <span class="w-2 h-2 rounded-full bg-neon shadow-[0_0_10px_#3dfac1]"></span>
+
+                                    <span class="text-neon text-[9px] font-black uppercase tracking-[.25em]">
+                                        Current Position
+                                    </span>
+
+                                </div>
+
+                                <h3 class="heading-font text-2xl md:text-3xl font-black text-white">
+                                    IT In-Charge | Assistant Admin Manager | Floor In-Charge
+                                </h3>
+
+                                <p class="text-neon font-bold text-sm mt-2">
+                                    Iota World Academic Institute
+                                </p>
+
+                            </div>
+
+                            <span class="tag whitespace-nowrap">
+                                Jun 2025 — Present
+                            </span>
+
+                        </div>
+
+
+                        <p class="text-stone-500 leading-relaxed max-w-3xl mb-7">
+
+                            Managing IT infrastructure, end-user support and
+                            day-to-day technical operations while coordinating
+                            technical requirements across departments.
+
+                        </p>
+
+
+                        <div class="grid md:grid-cols-2 gap-3">
+
+                            <div class="flex gap-3 text-sm text-stone-500">
+
+                                <i class="fa-solid fa-check text-neon mt-1"></i>
+
+                                <span>
+                                    Hardware, software and networking troubleshooting
+                                </span>
+
+                            </div>
+
+                            <div class="flex gap-3 text-sm text-stone-500">
+
+                                <i class="fa-solid fa-check text-neon mt-1"></i>
+
+                                <span>
+                                    Windows systems, laptops and peripherals
+                                </span>
+
+                            </div>
+
+                            <div class="flex gap-3 text-sm text-stone-500">
+
+                                <i class="fa-solid fa-check text-neon mt-1"></i>
+
+                                <span>
+                                    CCTV and multimedia/classroom technology
+                                </span>
+
+                            </div>
+
+                            <div class="flex gap-3 text-sm text-stone-500">
+
+                                <i class="fa-solid fa-check text-neon mt-1"></i>
+
+                                <span>
+                                    IT inventory and technical documentation
+                                </span>
+
+                            </div>
+
+                            <div class="flex gap-3 text-sm text-stone-500">
+
+                                <i class="fa-solid fa-check text-neon mt-1"></i>
+
+                                <span>
+                                    Operational reports and service records
+                                </span>
+
+                            </div>
+
+                            <div class="flex gap-3 text-sm text-stone-500">
+
+                                <i class="fa-solid fa-check text-neon mt-1"></i>
+
+                                <span>
+                                    Technical request prioritization
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EASTERN -->
+
+                <div class="relative mb-8">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="experience-card glass rounded-[2rem] p-7 md:p-9 glass-hover">
+
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-7">
+
+                            <div>
+
+                                <h3 class="heading-font text-2xl font-black text-white">
+                                    IT Support / Technical Support
+                                </h3>
+
+                                <p class="text-neon font-bold text-sm mt-2">
+                                    Eastern Garments
+                                </p>
+
+                            </div>
+
+                            <span class="tag">
+                                Employment Period Not Provided
+                            </span>
+
+                        </div>
+
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <span class="tag">Windows</span>
+                            <span class="tag">Microsoft 365</span>
+                            <span class="tag">Active Directory</span>
+                            <span class="tag">DNS</span>
+                            <span class="tag">DHCP</span>
+                            <span class="tag">Group Policy</span>
+                            <span class="tag">TCP/IP</span>
+                            <span class="tag">LAN/WAN</span>
+                            <span class="tag">Hardware</span>
+                            <span class="tag">Remote Support</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SOFTWARE HOUSE -->
+
+                <div class="relative mb-8">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="experience-card glass rounded-[2rem] p-7 md:p-9 glass-hover">
+
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
+
+                            <div>
+
+                                <h3 class="heading-font text-2xl font-black text-white">
+                                    Administrative & Technical Support Executive
+                                </h3>
+
+                                <p class="text-neon font-bold text-sm mt-2">
+                                    Software House
+                                </p>
+
+                            </div>
+
+                            <span class="tag">
+                                Nov 2024 — Jun 2025
+                            </span>
+
+                        </div>
+
+                        <p class="text-stone-500 leading-relaxed">
+                            Provided technical and administrative support for
+                            business operations, assisted with system issues,
+                            maintained operational documentation and worked
+                            with teams to ensure timely completion of tasks.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRIME -->
+
+                <div class="relative mb-8">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="experience-card glass rounded-[2rem] p-7 md:p-9 glass-hover">
+
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
+
+                            <div>
+
+                                <h3 class="heading-font text-2xl font-black text-white">
+                                    Marketing Manager
+                                </h3>
+
+                                <p class="text-neon font-bold text-sm mt-2">
+                                    Prime Traders, Karachi
+                                </p>
+
+                            </div>
+
+                            <span class="tag">
+                                Sep 2023 — Nov 2024
+                            </span>
+
+                        </div>
+
+                        <p class="text-stone-500 leading-relaxed">
+                            Managed marketing activities, customer engagement
+                            and business development initiatives while
+                            supporting sales strategies and coordinating with
+                            customers and suppliers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- KAMRAN -->
+
+                <div class="relative">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="experience-card glass rounded-[2rem] p-7 md:p-9 glass-hover">
+
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
+
+                            <div>
+
+                                <h3 class="heading-font text-2xl font-black text-white">
+                                    Sales Officer & Outlet Manager
+                                </h3>
+
+                                <p class="text-neon font-bold text-sm mt-2">
+                                    Kamran Computer Care Accessories Store
+                                </p>
+
+                            </div>
+
+                            <span class="tag">
+                                Sep 2022 — Sep 2024
+                            </span>
+
+                        </div>
+
+                        <p class="text-stone-500 leading-relaxed">
+                            Managed daily outlet operations, inventory,
+                            customer service and computer/accessory-related
+                            customer support while supervising staff and
+                            maintaining efficient store operations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================= -->
+
+    <section id="education" class="py-28 px-6">
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="grid lg:grid-cols-2 gap-5">
+
+
+                <!-- Education -->
+
+                <div class="glass rounded-[2.5rem] p-8 md:p-10">
+
+                    <div class="text-neon text-[10px] uppercase tracking-[.3em] font-black mb-10">
+                        04 / Education
+                    </div>
+
+                    <div class="space-y-7">
+
+
+                        <div class="flex gap-5">
+
+                            <div class="skill-icon shrink-0">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+
+                            <div>
+
+                                <h3 class="text-white font-bold text-lg">
+                                    BBIT
+                                </h3>
+
+                                <p class="text-stone-500 text-sm mt-1">
+                                    Bachelor of Business & Information Technology
+                                </p>
+
+                                <p class="text-neon text-[10px] font-bold uppercase tracking-widest mt-3">
+                                    Virtual University of Pakistan
+                                </p>
+
+                                <span class="tag mt-3">
+                                    1st Semester — In Progress
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="border-t border-white/5"></div>
+
+
+                        <div class="flex gap-5">
+
+                            <div class="skill-icon shrink-0">
+                                <i class="fa-solid fa-book"></i>
+                            </div>
+
+                            <div>
+
+                                <h3 class="text-white font-bold text-lg">
+                                    Intermediate
+                                </h3>
+
+                                <p class="text-stone-500 text-sm mt-1">
+                                    Government Degree College for Boys 7-D/2
+                                </p>
+
+                                <p class="text-stone-600 text-xs mt-2">
+                                    North Karachi • 2022 — 2023
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="border-t border-white/5"></div>
+
+
+                        <div class="flex gap-5">
+
+                            <div class="skill-icon shrink-0">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+
+                            <div>
+
+                                <h3 class="text-white font-bold text-lg">
+                                    ACIT
+                                </h3>
+
+                                <p class="text-stone-500 text-sm mt-1">
+                                    Advanced Certificate in Information Technology
+                                </p>
+
+                                <p class="text-stone-600 text-xs mt-2">
+                                    Future Creators • Jan 2023 — Jun 2023
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Certifications -->
+
+                <div class="glass rounded-[2.5rem] p-8 md:p-10">
+
+                    <div class="text-neon text-[10px] uppercase tracking-[.3em] font-black mb-10">
+                        05 / Development
+                    </div>
+
+                    <h2 class="heading-font text-4xl font-black text-white mb-8">
+                        Certifications
+                    </h2>
+
+
+                    <div class="space-y-4">
+
+
+                        <div class="glass rounded-2xl p-5 flex items-center justify-between gap-4">
+
+                            <div class="flex items-center gap-4">
+
+                                <div class="skill-icon">
+                                    <i class="fa-solid fa-network-wired"></i>
+                                </div>
+
+                                <div>
+
+                                    <h3 class="text-white font-bold">
+                                        CCNA
+                                    </h3>
+
+                                    <p class="text-stone-600 text-xs mt-1">
+                                        Corvit Institute Islamabad
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <span class="tag">
+                                In Progress
+                            </span>
+
+                        </div>
+
+
+                        <div class="glass rounded-2xl p-5 flex items-center gap-4">
+
+                            <div class="skill-icon">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+
+                            <div>
+
+                                <h3 class="text-white font-bold">
+                                    ACIT
+                                </h3>
+
+                                <p class="text-stone-600 text-xs mt-1">
+                                    Advanced Certificate in Information Technology
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="glass rounded-2xl p-5 flex items-center gap-4">
+
+                            <div class="skill-icon">
+                                <i class="fa-brands fa-microsoft"></i>
+                            </div>
+
+                            <div>
+
+                                <h3 class="text-white font-bold">
+                                    Microsoft 365 Fundamentals
+                                </h3>
+
+                                <p class="text-stone-600 text-xs mt-1">
+                                    Developing / Recommended
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CAREER OBJECTIVE
+    ========================= -->
+
+    <section class="py-20 px-6">
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="glass rounded-[3rem] p-9 md:p-16 relative overflow-hidden">
+
+                <div class="absolute -right-20 -top-20 w-72 h-72 rounded-full
+                            bg-neon/5 blur-3xl"></div>
+
+                <div class="relative z-10">
+
+                    <div class="text-neon text-[10px] uppercase tracking-[.3em] font-black mb-7">
+                        Career Direction
+                    </div>
+
+                    <h2 class="heading-font text-4xl md:text-6xl text-white font-black leading-tight max-w-4xl">
+
+                        Building stronger skills in
+                        <span class="gradient-text">
+                            infrastructure, cloud & cybersecurity.
+                        </span>
+
+                    </h2>
+
+                    <p class="text-stone-500 text-lg leading-relaxed max-w-3xl mt-7">
+
+                        Seeking an IT Support Officer, IT Support Engineer,
+                        IT Administrator or IT Operations role where technical
+                        troubleshooting, system administration, networking,
+                        hardware maintenance and user-support capabilities can
+                        contribute to reliable business operations.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact" class="py-28 px-6">
+
+        <div class="max-w-5xl mx-auto text-center">
+
+            <div class="text-neon text-[10px] uppercase tracking-[.35em] font-black mb-6">
+                Let's Connect
+            </div>
+
+            <h2 class="heading-font text-5xl md:text-8xl text-white font-black tracking-tight leading-none">
+
+                Have an IT
+                <span class="gradient-text">
+                    challenge?
+                </span>
+
+            </h2>
+
+            <p class="text-stone-500 text-lg max-w-xl mx-auto mt-7 leading-relaxed">
+
+                Let's discuss how technical support, reliable systems
+                and efficient IT operations can make a difference.
+
+            </p>
+
+
+            <div class="flex flex-wrap justify-center gap-4 mt-10">
+
+                <a href="mailto:abiqmohammad@gmail.com"
+                    class="btn-primary px-8 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest">
+
+                    <i class="fa-solid fa-envelope mr-2"></i>
+
+                    abiqmohammad@gmail.com
+
+                </a>
+
+
+                <a href="tel:+923030040978"
+                    class="btn-secondary px-8 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest">
+
+                    <i class="fa-solid fa-phone mr-2 text-neon"></i>
+
+                    +92 303 0040978
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="border-t border-white/5 py-10 px-6">
+
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row
+                    items-center justify-between gap-5">
+
+            <div>
+
+                <div class="heading-font text-white font-black text-lg">
+                    ABEEQUE<span class="text-neon">.</span>
+                </div>
+
+                <p class="text-[9px] uppercase tracking-[.25em] text-stone-700 mt-2">
+                    IT Support • Administration • Operations
+                </p>
+
+            </div>
+
+            <div class="text-center md:text-right">
+
+                <p class="text-[9px] uppercase tracking-[.25em] text-stone-700">
+                    © 2026 M. Abeeque-Ur-Rahman
+                </p>
+
+                <p class="text-[9px] uppercase tracking-[.2em] text-stone-800 mt-2">
+                    Karachi, Pakistan
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         MOBILE NAV
+    ========================= -->
+
+    <div class="md:hidden fixed bottom-4 left-4 right-4 z-[100]">
+
+        <div class="mobile-nav rounded-[1.7rem] h-[68px] px-4 flex items-center justify-around">
+
+            <a href="#home"
+                class="flex flex-col items-center text-white">
+
+                <i class="fa-solid fa-house text-sm"></i>
+
+                <span class="text-[7px] font-black uppercase tracking-widest mt-1">
+                    Home
+                </span>
+
+            </a>
+
+
+            <a href="#about"
+                class="flex flex-col items-center text-stone-500">
+
+                <i class="fa-solid fa-user text-sm"></i>
+
+                <span class="text-[7px] font-black uppercase tracking-widest mt-1">
+                    About
+                </span>
+
+            </a>
+
+
+            <a href="#skills"
+                class="flex flex-col items-center text-stone-500">
+
+                <i class="fa-solid fa-code text-sm"></i>
+
+                <span class="text-[7px] font-black uppercase tracking-widest mt-1">
+                    Skills
+                </span>
+
+            </a>
+
+
+            <a href="#experience"
+                class="flex flex-col items-center text-stone-500">
+
+                <i class="fa-solid fa-briefcase text-sm"></i>
+
+                <span class="text-[7px] font-black uppercase tracking-widest mt-1">
+                    Career
+                </span>
+
+            </a>
+
+
+            <a href="mailto:abiqmohammad@gmail.com"
+                class="w-11 h-11 rounded-2xl bg-neon text-dark
+                       flex items-center justify-center
+                       shadow-[0_0_25px_rgba(61,250,193,.2)]">
+
+                <i class="fa-solid fa-envelope"></i>
+
+            </a>
+
+        </div>
+
     </div>
 
-    <footer class="py-12 text-center">
-        <p class="text-[10px] font-bold uppercase tracking-[0.5em] text-stone-700">© 2026 M.Abeeque — Karachi, PK</p>
-    </footer>
 
 </body>
 </html>
+
